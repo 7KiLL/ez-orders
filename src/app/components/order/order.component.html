@@ -1,0 +1,127 @@
+<div class="card p-3 cursor-pointer">
+  <div class="row align-baseline align-items-md-center">
+    <div class="col-1 order-md-0">
+      <input type="checkbox" class="form-check-input">
+    </div>
+    <div class="col-1 order-md-1">
+      <ng-template #deliveryIconRef></ng-template>
+    </div>
+    <div class="col-5 order-md-2 col-md-2">
+      {{ data.FirstName }} {{ data.LastName }}
+    </div>
+    <div class="col-4 order-md-5 col-md-2">
+      <span class="badge rounded-pill w-100 d-flex justify-content-between card__order_status"
+            (click)="handleStatusClick($event)"
+            [ngClass]="orderStatus().color">{{ orderStatus().text }}
+        <app-ready/></span>
+    </div>
+    <div class="col-1 col-md-3 justify-content-md-end d-md-flex order-md-last">
+      <app-delete/>
+    </div>
+
+    <div class="col-2 d-md-none"></div>
+    <div class="col-5 order-md-3 col-md-2">
+      <app-location/>
+      {{ data.Address || '23 street street street street' }}
+    </div>
+    <div class="col-5 order-md-4 col-md-1 d-flex justify-content-end align-items-end ">
+      <span>
+        <app-time/>
+        {{ data.DateTime | time }}
+      </span>
+      <span class="mx-1 d-md-none" [class.rotated]="expanded" (click)="handleExpand()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
+  <path d="M0.677528 0L0 0.619255L7.2 7.2L14.4 0.619255L13.7225 0L7.2 5.96149L0.677528 0Z" fill="#3B33C8"/>
+</svg>
+      </span>
+    </div>
+  </div>
+
+  @if (expanded) {
+    <hr class="text-muted">
+
+    <div class="row card__expanded">
+      <div class="col-12">
+        <p class="text-center title">Delivery</p>
+        <div class="row gap-0">
+          <div class="col-6">
+            <strong>Date:</strong> {{ data.DateTime }}
+          </div>
+          <div class="col-6">
+            <strong>Order number: </strong> {{ data.Id }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <strong>Time:</strong> {{ data.DateTime | time }}
+          </div>
+          <div class="col-6">
+            <strong>Payment:</strong> {{ data.PaymentTypeStr }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <strong>Phone:</strong> {{ data.Phone }}
+          </div>
+          <div class="col-6">
+            <strong>Name:</strong> {{ data.FirstName }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <strong>Address:</strong> {{ data.Address || 'examples 5, example example' }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="alert-requests" role="alert">
+              <strong>Special
+                requests:</strong> {{ data.Comments ?? 'Additional notes at the end of the customer\'s order' }}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <table class="table">
+              <thead class="table__head">
+              <tr class="d-flex">
+                <th scope="col" class="col-6">Item name</th>
+                <th scope="col" class="col-3">Amount</th>
+                <th scope="col" class="col-3">Price</th>
+              </tr>
+              </thead>
+              <tbody>
+              @for (item of data.OrderItems; track item.ItemId) {
+                <tr  class="d-flex">
+
+                <td class="col-6">{{ item.Name }}</td>
+                <td class="col-3">{{ item.Amount }}</td>
+                <td class="col-3">{{ item.Price | currency:'USD' }} </td>
+
+                </tr>
+              }
+              </tbody>
+            </table>
+          </div>
+          <div class="col-12 d-flex justify-content-between">
+            <strong>Order amount:</strong>
+            <div>{{data.Sum}}</div>
+          </div>
+          <div class="col-12 d-flex justify-content-between">
+            <strong>Discount:</strong>
+            <div>-{{data.DiscountSum}}</div>
+          </div>
+          <div class="col-12 d-flex justify-content-between">
+            <strong>Total:</strong>
+            <div>{{data.Sum - data.DiscountSum}}</div>
+          </div>
+          <div class="col-12 mt-2 d-flex justify-content-between card__expanded__points_earned">
+            <strong>Points earned:</strong>
+            <strong>?pts.</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+</div>

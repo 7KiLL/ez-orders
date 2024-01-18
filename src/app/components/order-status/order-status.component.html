@@ -1,0 +1,11 @@
+<button class="btn w-100 focus-ring btn-{{statusMap[statusId].color}} px-2">
+  <span class="row d-flex text-center align-items-center" [class.text-white]="statusMap[statusId].isWhite">
+    <span class="col-9">
+    {{ statusMap[statusId].text }}
+    </span>
+    <span class="col-3">
+    <ng-template #iconRef></ng-template>
+    </span>
+  </span>
+
+</button>

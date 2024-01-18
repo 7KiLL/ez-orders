@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+$input-border-radius: 16px;
+$input-border-color: #DFE1E3;
+$input-box-shadow: 60px 64px 74px 0px rgba(151, 142, 142, 0.10);
+$input-color: rgba(29, 25, 39, 0.44);
+$input-font-family: 'Poppins';
+$input-font-size: 18px;
+$input-group-addon-bg: #fff;
+
+$card-border-radius: 16px;
+$card-border-color: #DFE1E3;
+$card-border-width: 1px;
+$card-box-shadow: 0px 7px 40px 0px rgba(133, 133, 133, 0.14);
+
+$btn-border-radius: 50px;
+
+$form-check-input-border-radius: 3px;
+$form-check-input-checked-border-color: #DFE1E3;
+$form-check-input-focus-box-shadow: 60px 64px 74px 0px rgba(151, 142, 142, 0.10);
+
+$btn-padding-y: 18px;
+
+$modal-content-bg: transparent;
+$pink: #F05D86;
+$theme-colors: map-merge(
+    $theme-colors,
+    (
+      "pink": $pink,
+      "incoming": #B1E2F4,
+      "preparation": #F8D657,
+      "ready": #6FD096,
+      "sent": #CBCBCB,
+      "canceled": #F64846,
+      "refund": #9C9AB7
+    )
+);
+
+
+@import "bootstrap/scss/bootstrap";
+
+
+body {
+  min-height: 100dvh;
+  background: #DFE1E3;
+}
+
+html {
+}
+
+input.with-icon {
+  border-right: none;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.title {
+  color: #000;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.alert-requests {
+  padding: 6px 14px;
+  border-radius: 9.487px;
+  border: 0.949px solid var(--Brand-color---purple, #3B33C8);
+  background: #ebebfa;
+  color: var(--Black, #1D1927);
+  font-family: "Poppins";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

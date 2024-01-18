@@ -1,0 +1,18 @@
+.custom-dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 12px 0;
+  border-radius: 16px;
+  border: 1px solid #DFE1E3;
+  background: #FFF;
+  box-shadow: 60px 64px 74px 0px rgba(151, 142, 142, 0.10);
+  &__content {
+    color: var(--black, #1D1927);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}

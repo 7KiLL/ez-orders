@@ -1,0 +1,31 @@
+.card {
+  &__expanded {
+    font-size: 13px;
+    .title {
+      font-size: 16px;
+    }
+    &__points_earned {
+      padding: 10px 14px;
+      color: var(--ffffff, #FFF);
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      border-radius: 9.487px;
+      background: var(--Brand-color---purple, #3B33C8);
+    }
+  }
+  &__order_status {
+    font-size: 12px;
+    @media screen and (min-width: 576px) {
+      font-size: 16px;
+    }
+  }
+  .table {
+    &__head {
+      border-radius: 9.487px;
+      background: var(--f-3-f-5-f-7, #F3F5F6);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="orders container">
+  <p class="orders__title title text-center text-md-start">Orders</p>
+  <div class="orders__content">
+    <div class="row">
+      <div class="col">
+        <div class="row orders__header p-md-2 align-items-md-baseline">
+          <div class="col-12 col-md-4 order-md-2 mb-2">
+            <app-form-control>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                <path
+                  d="M22.4298 21.1126L18.987 17.7467L18.9063 17.624C18.7563 17.4746 18.5511 17.3904 18.337 17.3904C18.1229 17.3904 17.9177 17.4746 17.7677 17.624C14.8419 20.3082 10.3335 20.4541 7.23249 17.9649C4.1315 15.4757 3.40016 11.1239 5.5235 7.79547C7.64683 4.46707 11.9659 3.19496 15.6164 4.82279C19.2669 6.45062 21.116 10.4733 19.9373 14.2229C19.8525 14.4938 19.9218 14.7884 20.1194 14.9957C20.3169 15.203 20.6125 15.2916 20.8949 15.228C21.1773 15.1644 21.4035 14.9584 21.4884 14.6875C22.8974 10.2378 20.7694 5.44919 16.481 3.41952C12.1927 1.38985 7.031 2.72821 4.33501 6.5688C1.63901 10.4094 2.21782 15.5996 5.69701 18.782C9.1762 21.9643 14.5116 22.1837 18.2518 19.2982L21.3001 22.2784C21.6149 22.5849 22.1239 22.5849 22.4387 22.2784C22.7532 21.9676 22.7532 21.4673 22.4387 21.1565L22.4298 21.1126Z"
+                  fill="#3B33C8"/>
+              </svg>
+            </app-form-control>
+          </div>
+          <div class="col-6 col-md order-md-4 mb-2">
+            <app-dropdown>Filter</app-dropdown>
+          </div>
+          <div class="col-6  col-md order-md-5 mb-2">
+            <app-dropdown>Display</app-dropdown>
+          </div>
+          <div class="col-1 col-md-auto order-md-0">
+            <input type="checkbox" class="form-check-input">
+          </div>
+          <div class="col-7 d-md-none"></div>
+          <div class="col-md-3 order-md-3 d-none d-md-block"></div>
+          <div class="col-4 col-md-auto order-md-1 d-flex justify-content-center align-items-center orders__remove_all">Remove All
+            <app-delete/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="row orders__items">
+      @for (order of (orders$ | async); track order.Id) {
+        <div class="col-12 my-2">
+          <app-order [checked]="false" [data]="order"></app-order>
+        </div>
+      }
+
+    </div>
+  </div>
+
+</div>

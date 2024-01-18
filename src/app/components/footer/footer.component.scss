@@ -1,0 +1,43 @@
+.footer {
+  color: #9DB2CE;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Poppins;
+  font-size: 14.423px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  //position: fixed;
+  //left: 0;
+  //bottom: 0;
+  //width: 100%;
+  //display: flex;
+  //justify-content: space-around;
+  //align-items: center;
+  height: 90px;
+  background: url("/assets/footer-bg.svg");
+  background-position: center;
+  background-position-y: 90px;
+  .circle-button {
+    position: absolute;
+    top: -30px; /* Adjust to push the button above the footer */
+    left: calc(50% - 30px); /* Adjust the size of the button */
+    width: 60px; /* Size of the button */
+    height: 60px; /* Size of the button */
+    background-color: #567;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    background: var(--Brand-color---purple, #3B33C8);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+}

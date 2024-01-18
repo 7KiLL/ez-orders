@@ -1,0 +1,32 @@
+.orders {
+  &__content {
+    @media screen and (min-width: 576px) {
+      border: 1.334px solid #DFE1E3;
+      box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.08);
+
+
+    }
+  }
+
+  &__header {
+    @media screen and (min-width: 576px) {
+      background: #fff;
+
+    }
+  }
+  &__remove_all {
+    font-family: Poppins;
+  }
+  &__title {
+    @media screen and (min-width: 576px) {
+      color: #3B33C8;
+    }
+  }
+
+  &__items {
+    @media screen and (min-width: 576px) {
+      background: #f5f5f5;
+      padding: 12px 0;
+    }
+  }
+}
